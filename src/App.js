@@ -7,7 +7,7 @@ import CalcButton from './components/CalcButton';
 
 //My Imports
 import reducer, {initialState} from './reducers'
-import {addOne, applyNumber} from "./actions";
+import {addOne, applyNumber, changeOperation , clearDisplay} from "./actions";
 
 function App() {
   
@@ -20,6 +20,15 @@ function App() {
   const handleClick = (number) => {
     dispatch(applyNumber(number))
   }
+  
+  const operation = (operation) => {
+    dispatch(changeOperation(operation))
+  }
+  
+  const clear = () => {
+    dispatch(clearDisplay())
+  }
+  
   
   return (
     <div className="App">
@@ -81,13 +90,21 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={() => {
+                operation('+')
+              }}/>
+              <CalcButton value={"*"} onClick={() => {
+                operation('*')
+              }}/>
+              <CalcButton value={"-"} onClick={() => {
+                operation('-')
+              }}/>
             </div>
             
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={() => {
+                clear()
+              }}/>
             </div>
           
           </form>
