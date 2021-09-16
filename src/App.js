@@ -7,7 +7,7 @@ import CalcButton from './components/CalcButton';
 
 //My Imports
 import reducer, {initialState} from './reducers'
-import {addOne, applyNumber, changeOperation , clearDisplay , setMemory} from "./actions";
+import {addOne, applyNumber, changeOperation , clearDisplay , setMemory , addMemory} from "./actions";
 
 function App() {
   
@@ -32,6 +32,9 @@ function App() {
     dispatch(setMemory(state.total))
   }
   
+  const inputMemory = () => {
+    dispatch(addMemory(state.memory))
+  }
   
   return (
     <div className="App">
@@ -54,7 +57,9 @@ function App() {
               <CalcButton value={"M+"} onClick={() => {
                 memory();
               }}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"MR"} onClick={() => {
+                inputMemory()
+              }}/>
               <CalcButton value={"MC"}/>
             </div>
             

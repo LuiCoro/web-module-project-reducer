@@ -4,6 +4,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const ADD_ONE = "ADD_ONE";
 export const CLEAR_DISPLAY = 'CLEAR_DISPLAY'
 export const SET_MEMORY = 'SET_MEMORY'
+export const ADD_MEMORY = "ADD_MEMORY";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -12,8 +13,6 @@ export const addOne = () => {
 export const applyNumber = (number) => {
     return({type:APPLY_NUMBER, payload:number});
 }
-
-// My actions created
 
 export const changeOperation = (operation) => {
     return ({type: CHANGE_OPERATION , payload:operation});
@@ -25,4 +24,7 @@ export const clearDisplay = () => {
 
 export const setMemory = (total) => {
     return ({type: SET_MEMORY , payload:total})
+}
+export const addMemory = (total) => {
+    return ({type: ADD_MEMORY , payload: total })
 }
