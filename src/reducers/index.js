@@ -1,4 +1,4 @@
-import {ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY , SET_MEMORY , ADD_MEMORY} from './../actions';
+import {ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY , SET_MEMORY , ADD_MEMORY , CLEAR_MEMORY} from './../actions';
 
 
 // Step 1 take the inital state into app js plus our reducer()
@@ -55,6 +55,12 @@ const reducer = (state, action) => {
       return ({
         ...state,
         total: calculateResult(state.total, action.payload, state.operation)
+      })
+      
+    case(CLEAR_MEMORY):
+      return({
+        ...state,
+        memory: 0
       })
       
     default:

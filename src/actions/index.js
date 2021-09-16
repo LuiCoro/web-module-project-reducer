@@ -5,6 +5,7 @@ export const ADD_ONE = "ADD_ONE";
 export const CLEAR_DISPLAY = 'CLEAR_DISPLAY'
 export const SET_MEMORY = 'SET_MEMORY'
 export const ADD_MEMORY = "ADD_MEMORY";
+export const CLEAR_MEMORY = "CLEAR_MEMORY";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -27,4 +28,7 @@ export const setMemory = (total) => {
 }
 export const addMemory = (total) => {
     return ({type: ADD_MEMORY , payload: total })
+}
+export const clearMemory = () => {
+    return ({type: CLEAR_MEMORY})
 }

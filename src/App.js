@@ -7,7 +7,7 @@ import CalcButton from './components/CalcButton';
 
 //My Imports
 import reducer, {initialState} from './reducers'
-import {addOne, applyNumber, changeOperation , clearDisplay , setMemory , addMemory} from "./actions";
+import {addOne, applyNumber, changeOperation, clearDisplay, setMemory, addMemory, clearMemory} from "./actions";
 
 function App() {
   
@@ -36,6 +36,10 @@ function App() {
     dispatch(addMemory(state.memory))
   }
   
+  const resetMemory = () => {
+    dispatch(clearMemory())
+  }
+  
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -60,7 +64,9 @@ function App() {
               <CalcButton value={"MR"} onClick={() => {
                 inputMemory()
               }}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={() => {
+                resetMemory()
+              }}/>
             </div>
             
             <div className="row">
