@@ -3,6 +3,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 
 export const ADD_ONE = "ADD_ONE";
 export const CLEAR_DISPLAY = 'CLEAR_DISPLAY'
+export const SET_MEMORY = 'SET_MEMORY'
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -20,4 +21,8 @@ export const changeOperation = (operation) => {
 
 export const clearDisplay = () => {
     return({type:CLEAR_DISPLAY})
+}
+
+export const setMemory = (total) => {
+    return ({type: SET_MEMORY , payload:total})
 }
